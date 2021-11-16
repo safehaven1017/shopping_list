@@ -1,9 +1,13 @@
 import os
+import validate_menu_selection
 
 def main():
     
     # creating function to clear console
     clear = lambda: os.system('clear')
+
+    # create storage for shopping lists
+    shopping_lists = []
 
     while True:
         print("SHOPPING HELPER")
