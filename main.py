@@ -27,24 +27,29 @@ def main():
             clear()
             shopping_lists += edit_lists(shopping_lists, n=True)
 
-        # edit shopping lists
+        # EDIT SHOPPING LISTS
         elif user_input == 2 and shopping_lists != []:
             clear()
             new_list = edit_lists(shopping_lists)
             shopping_lists = new_list
         elif user_input == 2 and shopping_lists == []:
             print("\nThere are no lists to edit!\n")
-        # delete shopping lists
-        # elif user_input == 3:
-        #     clear()
-        #     delete_lists(shopping_lists)
+        
+        # DELETE SHOPPING LISTS
+        elif user_input == 3:
+            clear()
+            if shopping_lists != []:
+                delete_lists(shopping_lists)
+            else:
+                print("\nThere are no lists to delete!\n")
         
         # VIEW SHOPPING LISTS
         elif user_input == 4:
             clear()
-            view_lists(shopping_lists)
-            # print(shopping_lists)
-        # QUIT
+            if shopping_lists != []:
+                view_lists(shopping_lists)
+            else:
+                print("\nThere are no lists to view!\n")
         else:
             clear()
             quit()
