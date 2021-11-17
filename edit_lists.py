@@ -1,4 +1,5 @@
 from validate_name import validate_name
+import validate_item
 
 def edit_lists(shopping_list):
 
@@ -7,8 +8,11 @@ def edit_lists(shopping_list):
     temp_shopping_list = []
 
     while True:
+        # if given list, give edit options
         if len(shopping_list) > 0:
-            return
+            
+        
+        # create list if not given one
         else:
             # validate shopping list name
             print("""Enter a name for your shopping list. 
@@ -17,17 +21,21 @@ def edit_lists(shopping_list):
             if name_input == 'q':
                 break
             
-            # add items to list
+            # add item to first list
             print("""Enter an item name to add it to your list. 
             Go back to the menu anytime by entering 'q'.""")
-            phone_input = validate_phone()
-            if phone_input == 'q':
+            item_input = validate_item()
+            temp_item_list = []
+            if item_input == 'q':
                 break
-
-            # assigning input to list/dict 
-            temp_shopping_dict[name_input] = phone_input
-            temp_shopping_list.append(temp_shopping_dict)
-
+            else:
+                temp_item_list.append(item_input)
+                temp_shopping_dict[name_input] = temp_item_list
+                temp_shopping_list.append(temp_shopping_dict)
+                
+                # go into edit mode with temp list
+                edit_lists(temp_item_list)
+           
     return temp_shopping_list
 
 
