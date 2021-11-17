@@ -24,7 +24,7 @@ def remove_items(dict):
                 if item_input not in dict[key]:
                     print(f"The item '{item_input}' wasn't found in this list. Try again.")
                 else:
-                    dict[key].pop(item_input)
+                    dict[key].remove(item_input)
                     view_dictionary(dict)
 
     

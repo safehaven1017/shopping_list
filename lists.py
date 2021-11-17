@@ -15,15 +15,15 @@ def edit_lists(main_list, n=False):
             view_lists(main_list)
 
             # ASK FOR USER INPUT
-            print("\nChoose the corresponding number of a list to edit it, or create new list with 'n'.")
+            print("\nChoose the corresponding number of a list to edit it.")
             edit_input = validate_menu_selection(1, len(main_list))
             # SAVE SHOPPING LIST AND GO BACK TO MAIN MENU
             if edit_input == "q":
                 if len(temp_shopping_list) > 0:
-                    return temp_shopping_list
-            # CREATE NEW LIST
+                    return temp_shopping_list           
             elif edit_input == "n":
-               edit_lists(temp_shopping_list,n=True) 
+               return temp_shopping_list  
+                
             #EDIT LIST 
             else:
                 print("\nEnter '1' to add or '2' to remove items from list.")
@@ -34,7 +34,7 @@ def edit_lists(main_list, n=False):
                     add_items(temp_shopping_dict)
                 # REMOVE ITEMS
                 elif items_input == 2:
-                    if len(main_list[edit_input - 1]) < 1:
+                    if len(main_list[edit_input - 1]) > 0:
                         temp_shopping_dict = main_list[edit_input - 1]
                         remove_items(temp_shopping_dict)
                     else:
@@ -70,7 +70,8 @@ def delete_lists(main_list):
                 # DELETE FLAG
                 print("Are you sure you want to delete:")
                 print(f"'{view_dictionary(main_list[delete_input - 1])}'?")
-                delete_flag = validate_menu_selection(1, 2)
+                print("Press '1' to delete.")
+                delete_flag = validate_menu_selection(1, 1)
                 if delete_flag == "q" or delete_flag == 'n' or delete_flag == 2:
                     break
                 else:

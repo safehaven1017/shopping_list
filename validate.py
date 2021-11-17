@@ -17,7 +17,10 @@ def validate_menu_selection(min, max):
                 
                 # ERROR HANDLING FOR USER CHOOSING NUMBER OUTSIDE OF RANGE
                 else:
-                    print(f"\nInvalid number. Choose options between {min} and {max}.\n")
+                    if min == max:
+                        print(f"\nInvalid number. Number must be {min}.")
+                    else:
+                        print(f"\nInvalid number. Choose options between {min} and {max}.\n")
             
             # RETURNS INPUT WHEN USER TYPES "Q" OR "BACK" KEY, OR WHEN SELECTING AVAILABLE OPTION
             else:
