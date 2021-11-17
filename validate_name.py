@@ -2,7 +2,7 @@ def validate_name():
     while True:
         name = input("Input a name here: ")
 
-        if name.lower() == 'done':
+        if name.lower() == 'q':
             return name.lower()
 
         # filtering characters

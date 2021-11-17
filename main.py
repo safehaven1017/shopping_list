@@ -1,5 +1,6 @@
 import os
 import validate_menu_selection
+import create_lists
 
 def main():
     
@@ -22,15 +23,21 @@ def main():
         # create shopping lists
         if user_input == 1:
             clear()
-            create_lists(shopping_lists)
+            add_to_shopping_lists = []
+            add_to_shopping_lists = add_to_shopping_lists + create_lists()        
+
+        # create shopping lists
+        elif user_input == 2:
+            clear()
+            edit_lists(shopping_lists)
 
         # delete shopping lists
-        elif user_input == 2:
+        elif user_input == 3:
             clear()
             delete_lists(shopping_lists)
         
         # view shopping lists
-        elif user_input == 3:
+        elif user_input == 4:
             clear()
             view_lists(shopping_lists)
         # quit
