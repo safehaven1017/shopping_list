@@ -54,16 +54,17 @@ def validate_item():
         item_name = input("Input an item name here: ")
 
         # RETURNS INPUT WHEN USER TYPES "Q" OR "BACK" KEY
-        if item_name.lower() == 'q':
+        if item_name.lower() == 'b':
             return item_name.lower()
 
-        # FILTERING CHARACTERS
-        test_name = item_name.replace("'", '')
-        test_name = item_name.replace(" ", '')
+        elif item_name.lower() != 'b':
+            # FILTERING CHARACTERS
+            test_name = item_name.replace("'", '')
+            test_name = item_name.replace(" ", '')
 
-        # VALIDATES THAT INPUT IS ALPHABETICAL, ITEMS SHOULD BE CAPITALIZED
-        if test_name.isalpha() == True:
-            return item_name.capitalize()
+            # VALIDATES THAT INPUT IS ALPHABETICAL, ITEMS SHOULD BE CAPITALIZED (TITLE)
+            if test_name.isalpha() == True:
+                return item_name.title()
 
         # ERROR HANDLING
         else:

@@ -1,11 +1,14 @@
-def view_lists(entries):
+# PRINT ALL SHOPPING
+def view_lists(shopping_lists):
     print()
     
-    # create count to show index next to entry 
-    count = 1
-
-    # print all entries 
-    for entry in entries:
-        for dict in entry:
-            print(f"{count} - List Name: {dict} - Items: {entry[dict]}")
-        count += 1
+    # COUNT USED TO PRINT INDEX
+    count = 0
+    for dict in shopping_lists:
+        for key in dict:
+            count += 1
+            list_string_concat = f"{count} - {key}:"
+            for items in range(len(dict[key])):
+                list_string_concat = list_string_concat + f" {dict[key][items]},"
+            list_string_concat = list_string_concat[:-1]
+            print(list_string_concat)

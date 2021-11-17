@@ -1,4 +1,4 @@
-from add_items import add_items
+from items import *
 from validate import *
 from view_lists import view_lists
 
@@ -19,8 +19,8 @@ def edit_lists(shopping_list=[]):
             if edit_input == "q":
                 break
             else:
-                temp_shopping_dict = shopping_list[edit_input]
-                temp_shopping_dict = add_items(temp_shopping_dict)
+                temp_shopping_dict = shopping_list[edit_input - 1]
+                add_items(temp_shopping_dict)
                
         # create list if not given one
         else:
