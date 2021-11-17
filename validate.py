@@ -6,10 +6,10 @@ def validate_menu_selection(min, max):
         # GIVES USER THE OPTION TO CHOOSE A MENU ITEM OR QUIT OUT OF LOOP
         menu_input = input("Enter your choice here. Enter 'q' to quit: ")
         # DETECTS WHETHER OR NOT USER ENTERS "Q" FOR QUIT OR CHOOSES A NUMBER
-        if menu_input.isnumeric() == True or menu_input.lower() == "q":
+        if menu_input.isnumeric() == True or menu_input.lower() == "q" or menu_input.lower() == "n":
             
             # FOR NUMERICAL INPUTS
-            if menu_input.lower() != 'q':
+            if menu_input.lower() != 'q' and menu_input.lower() != 'n':
                 
                 # RETURNS INPUT IF NUMERICAL INPUT IS WITHIN RANGE
                 if int(min) <= int(menu_input) <= int(max):
@@ -19,7 +19,7 @@ def validate_menu_selection(min, max):
                 else:
                     print(f"\nInvalid number. Choose options between {min} and {max}.\n")
             
-            # RETURNS INPUT WHEN USER TYPES "Q" OR "BACK" KEY
+            # RETURNS INPUT WHEN USER TYPES "Q" OR "BACK" KEY, OR WHEN SELECTING AVAILABLE OPTION
             else:
                 return menu_input.lower()
         else:

@@ -1,5 +1,5 @@
 from validate import validate_item
-
+from view import view_dictionary
 
 # ADD ITEM TO ITEMS LIST IN DICTIONARY
 def add_items(dict):
@@ -10,5 +10,20 @@ def add_items(dict):
         else:
             for key in dict:
                 dict[key].append(item_input)
-                print(dict)
+                view_dictionary(dict)
+
+
+# REMOVE ITEM TO ITEMS LIST IN DICTIONARY
+def remove_items(dict):
+    while True:
+        item_input = validate_item()
+        if item_input == "b":
+            break
+        elif item_input not in dict[key]:
+            print(f"The item '{item_input}' wasn't found in this list. Try again.")
+        else:
+            for key in dict:
+                dict[key].pop(item_input)
+                view_dictionary(dict)
+
     

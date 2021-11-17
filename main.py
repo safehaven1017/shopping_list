@@ -1,14 +1,13 @@
 import os
 from validate import validate_menu_selection
-from edit_lists import edit_lists
-from view_lists import view_lists
+from lists import *
 
 def main():
     
-    # creating function to clear console
+    # CREATING FUNCTION TO CLEAR CONSOLE
     clear = lambda: os.system('clear')
 
-    # create storage for shopping lists
+    # CREATE STORAGE FOR SHOPPING LISTS
     shopping_lists = []
 
     while True:
@@ -19,14 +18,14 @@ def main():
         print("3. DELETE SHOPPING LISTS")
         print("4. VIEW SHOPPING LISTS\n")
         
-        # get user input
+        # GET USER INPUT
         user_input = validate_menu_selection(1, 4)
 
-        # create shopping lists
+        # CREATE SHOPPING LISTS
         if user_input == 1:
             clear()
             shopping_lists = shopping_lists + edit_lists()  
-            # edit_lists(shopping_lists)      
+               
 
         # edit shopping lists
         elif user_input == 2:
@@ -38,11 +37,11 @@ def main():
         #     clear()
         #     delete_lists(shopping_lists)
         
-        # view shopping lists
+        # VIEW SHOPPING LISTS
         elif user_input == 4:
             clear()
             view_lists(shopping_lists)
-        # quit
+        # QUIT
         else:
             clear()
             quit()
