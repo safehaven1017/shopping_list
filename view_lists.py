@@ -1,4 +1,4 @@
-def view_entries(entries):
+def view_lists(entries):
     print()
     
     # create count to show index next to entry 
@@ -7,5 +7,5 @@ def view_entries(entries):
     # print all entries 
     for entry in entries:
         for dict in entry:
-            print(f"{count} - Contact Name: {dict} - Phone Number: {entry[dict]}")
+            print(f"{count} - List Name: {dict} - Items: {entry[dict]}")
         count += 1

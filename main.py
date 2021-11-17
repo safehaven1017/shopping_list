@@ -1,6 +1,7 @@
 import os
-import validate_menu_selection
-import create_lists
+from validate import validate_menu_selection
+from edit_lists import edit_lists
+from view_lists import view_lists
 
 def main():
     
@@ -11,30 +12,31 @@ def main():
     shopping_lists = []
 
     while True:
-        print("SHOPPING HELPER")
+        print("\nSHOPPING HELPER")
         print("---------------\n")
         print("1. CREATE SHOPPING LISTS")
-        print("2. DELETE SHOPPING LISTS")
-        print("3. VIEW SHOPPING LISTS")
+        print("2. EDIT SHOPPING LISTS")
+        print("3. DELETE SHOPPING LISTS")
+        print("4. VIEW SHOPPING LISTS\n")
         
         # get user input
-        user_input = validate_menu_selection(1, 5)
+        user_input = validate_menu_selection(1, 4)
 
         # create shopping lists
         if user_input == 1:
             clear()
-            add_to_shopping_lists = []
-            add_to_shopping_lists = add_to_shopping_lists + create_lists()        
+            shopping_lists = shopping_lists + edit_lists()  
+            # edit_lists(shopping_lists)      
 
-        # create shopping lists
+        # edit shopping lists
         elif user_input == 2:
             clear()
             edit_lists(shopping_lists)
 
         # delete shopping lists
-        elif user_input == 3:
-            clear()
-            delete_lists(shopping_lists)
+        # elif user_input == 3:
+        #     clear()
+        #     delete_lists(shopping_lists)
         
         # view shopping lists
         elif user_input == 4:
@@ -44,6 +46,8 @@ def main():
         else:
             clear()
             quit()
+
+main()
 
 
 
