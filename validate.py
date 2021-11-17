@@ -51,6 +51,7 @@ def validate_name():
 # VALIDATES ITEM UPON CREATION
 def validate_item():
     while True:
+        print("Press 'b' to return.")
         item_name = input("Input an item name here: ")
 
         # RETURNS INPUT WHEN USER TYPES "Q" OR "BACK" KEY

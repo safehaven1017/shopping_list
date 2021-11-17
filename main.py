@@ -11,6 +11,7 @@ def main():
     shopping_lists = []
 
     while True:
+        
         print("\nSHOPPING HELPER")
         print("---------------\n")
         print("1. CREATE SHOPPING LISTS")
@@ -24,14 +25,15 @@ def main():
         # CREATE SHOPPING LISTS
         if user_input == 1:
             clear()
-            shopping_lists = shopping_lists + edit_lists()  
-               
+            shopping_lists += edit_lists(shopping_lists, n=True)
 
         # edit shopping lists
-        elif user_input == 2:
+        elif user_input == 2 and shopping_lists != []:
             clear()
-            edit_lists(shopping_lists)
-
+            new_list = edit_lists(shopping_lists)
+            shopping_lists = new_list
+        elif user_input == 2 and shopping_lists == []:
+            print("\nThere are no lists to edit!\n")
         # delete shopping lists
         # elif user_input == 3:
         #     clear()
@@ -41,6 +43,7 @@ def main():
         elif user_input == 4:
             clear()
             view_lists(shopping_lists)
+            # print(shopping_lists)
         # QUIT
         else:
             clear()

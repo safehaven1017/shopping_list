@@ -19,11 +19,12 @@ def remove_items(dict):
         item_input = validate_item()
         if item_input == "b":
             break
-        elif item_input not in dict[key]:
-            print(f"The item '{item_input}' wasn't found in this list. Try again.")
         else:
             for key in dict:
-                dict[key].pop(item_input)
-                view_dictionary(dict)
+                if item_input not in dict[key]:
+                    print(f"The item '{item_input}' wasn't found in this list. Try again.")
+                else:
+                    dict[key].pop(item_input)
+                    view_dictionary(dict)
 
     
